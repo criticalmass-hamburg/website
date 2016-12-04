@@ -3,5 +3,10 @@
     "description": "Website for criticalmass.hamburg",
     "require": {
         "tmd/auto-git-pull": "^2.1"
+    },
+    "scripts": {
+        "post-install-cmd": [
+            "chmod +x vendor/tmd/auto-git-pull/scripts/git-pull.sh"
+        ]
     }
 }
