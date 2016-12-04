@@ -22,6 +22,9 @@ $deployer = new Deployer([
         '192.168.0.2/24'
     ],
 
+    // User to run the script as
+    'deployUser' => 'cmhh',
+
     // Git branch to reset to
     'branch' => 'master',
 
