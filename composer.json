@@ -1,5 +1,7 @@
 {
     "name": "criticalmass-hamburg/website",
     "description": "Website for criticalmass.hamburg",
-    "require": {}
+    "require": {
+        "tmd/auto-git-pull": "^2.1"
+    }
 }
