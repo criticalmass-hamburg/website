@@ -30,7 +30,7 @@ $deployer = new Deployer([
 
     // Path to the pull script
     // (You can provide your own script instead)
-    'pullScriptPath' => __DIR__ . '/scripts/git-pull.sh',
+    'pullScriptPath' => __DIR__ . '/vendor/tmd/auto-git-pull/scripts/git-pull.sh',
 
     // Git remote to fetch from
     'remote' => 'origin'
