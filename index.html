@@ -86,7 +86,7 @@
                     </p>
 
                     <p>
-                        Die nächste Tour ist am <time id="tour-date"></time> um <time id="tour-time"></time> Uhr.
+                        Die nächste Tour ist am <strong id="tour-date"></strong>.
                     </p>
 
                     <p>
@@ -309,7 +309,9 @@
         function createCalendar(rideData) {
             $('#tour-location').html(rideData.location);
 
-            var date = Date.parse(rideData.dateTime);
+            var date = new Date(rideData.timestamp * 1000);
+
+            $('#tour-date').html(date.format('dd.mm.yyyy'));
         }
 
         function createMap(rideData) {
