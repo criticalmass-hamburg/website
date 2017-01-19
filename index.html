@@ -85,12 +85,18 @@
                         Die Critical Mass Hamburg trifft sich immer am letzten Freitag im Monat gegen 19 Uhr dort, wo die Tour im vorherigen Monat endete.
                     </p>
 
-                    <p>
+                    <p class="loading-spinner hide-after-load text-xs-center">
+                        <i class="fa fa-spinner fa-pulse fa-1x fa-fw"></i>
+                        <span>Lade Tourdaten</span>
+                    </p>
+
+                    <p class="hidden show-after-load">
                         Die nächste Tour ist am <strong id="tour-date"></strong>.
                     </p>
 
-                    <p>
+                    <p class="hidden show-after-load">
                         Der Treffpunkt ist dieses Mal: <strong id="tour-location">wefewf</strong>
+                    </p>
                 </div>
 
                 <div class="col-md-6 col-lg-8 mt-3" style="height: 200px;">
@@ -98,7 +104,12 @@
                         Treffen?
                     </h3>
 
-                    <div id="tour-map" style="height: 100%;">
+                    <p class="loading-spinner hide-after-load text-xs-center mt-3">
+                        <i class="fa fa-spinner fa-pulse fa-1x fa-fw"></i>
+                        <span>Lade Kartendaten</span>
+                    </p>
+
+                    <div class="hidden show-after-load" id="tour-map" style="height: 100%;">
 
                     </div>
                 </div>
@@ -300,6 +311,9 @@
                 success: function(rideData) {
                     createCalendar(rideData);
                     createMap(rideData);
+
+                    $('.hide-after-load').hide();
+                    $('.show-after-load').show();
                 },
                 error: function() {
                 }
