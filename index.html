@@ -88,7 +88,7 @@
                     <div class="row">
                         <div class="col-md-4 col-lg-4" style="height: 200px;">
                             <p>
-                                Die Critical Mass Hamburg trifft sich immer am letzten Freitag im Monat gegen 19 Uhr dort, wo die Tour im vorherigen Monat endete.
+                                Die Critical Mass Hamburg trifft sich immer am letzten Freitag im Monat gegen 19 Uhr dort.
                             </p>
 
                             <p class="loading-spinner hide-after-load text-xs-center">
@@ -103,6 +103,20 @@
                             <p class="hidden show-after-load">
                                 Der Treffpunkt ist dieses Mal: <strong id="tour-location">wefewf</strong>
                             </p>
+
+                            <div class="hidden show-after-load text-xs-center">
+                                <div class="btn-group">
+                                    <a id="city-page" href="" class="btn btn-secondary">
+                                        <i class="fa fa-bicycle"></i>
+                                        Mehr erfahren
+                                    </a>
+
+                                    <a id="ride-page" href="" class="btn btn-secondary">
+                                        <i class="fa fa-map-pin"></i>
+                                        Tourseite
+                                    </a>
+                                </div>
+                            </div>
                         </div>
 
                         <div class="col-md-8 col-lg-8" style="height: 200px;">
@@ -330,6 +344,9 @@
             var date = new Date(rideData.timestamp * 1000);
 
             $('#tour-date').html(date.format('dd.mm.yyyy'));
+
+            $('#city-page').attr('href', 'https://criticalmass.in/hamburg');
+            $('#ride-page').attr('href', 'https://criticalmass.in/hamburg/' + date.format('yyyy-mm-dd'));
         }
 
         function createMap(rideData) {
