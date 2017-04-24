@@ -350,7 +350,7 @@
         }
 
         function createMap(rideData) {
-            var map = L.map('tour-map', { zoomControl: false });
+            var map = L.map('tour-map');
             var center = L.latLng(rideData.latitude, rideData.longitude);
 
             L.tileLayer('https://maps.wikimedia.org/osm-intl/{z}/{x}/{y}@2x.png', {
