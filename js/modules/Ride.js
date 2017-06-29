@@ -1,4 +1,4 @@
-define(['jquery', 'leaflet', 'dateformat'], function ($) {
+define(['jquery', 'leaflet', 'dateformat', 'leaflet-extramarkers'], function ($) {
     Ride = function (context, options) {
         this._mapSelector = context;
 
@@ -35,7 +35,14 @@ define(['jquery', 'leaflet', 'dateformat'], function ($) {
 
         map.setView(center, 15);
 
-        L.marker(center).addTo(map);
+        var markerIcon = L.ExtraMarkers.icon({
+            icon: 'fa-bicycle',
+            markerColor: 'green',
+            shape: 'square',
+            prefix: 'fa'
+        });
+
+        L.marker(center, {icon: markerIcon}).addTo(map);
     };
 
     Ride.prototype._createCalendar = function(rideData) {

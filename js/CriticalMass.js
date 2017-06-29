@@ -17,7 +17,8 @@ require.config({
         "leaflet": "js/external/leaflet/leaflet",
         "jquery": "js/external/jquery/jquery-3.1.0.min",
         "localforage": "js/external/localforage/localforage.min",
-        "dateformat": "js/external/dateformat/dateformat"
+        "dateformat": "js/external/dateformat/dateformat",
+        "leaflet-extramarkers": "js/external/leaflet/ExtraMarkers"
     },
     shim: {
 
