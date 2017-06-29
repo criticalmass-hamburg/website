@@ -25,6 +25,9 @@
         <meta name="twitter:title" content="Critical Mass Hamburg" />
         <meta name="twitter:description" content="Die Critical Mass Hamburg ist jeden letzten Freitag im Monat mit einer Radtour in Hamburg unterwegs." />
         <meta name="twitter:image" content="https://criticalmass.hamburg/img/opengraph/preview.jpg" />
+
+        <script src="js/external/requirejs/require.js"></script>
+        <script src="js/CriticalMass.js"></script>
     </head>
     <body>
         <a href="https://github.com/criticalmass-hamburg/website">
@@ -297,70 +300,8 @@
                 </div>
             </div>
         </div>
-
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.3.7/js/tether.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/js/bootstrap.min.js"></script>
-        <script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
-        <script src="js/dateformat.js"></script>
-
-        <!-- Piwik -->
-        <script type="text/javascript">
-            var _paq = _paq || [];
-            _paq.push(["setDomains", ["*.criticalmass.hamburg"]]);
-            _paq.push(['trackPageView']);
-            _paq.push(['enableLinkTracking']);
-            (function() {
-                var u="//piwik.caldera.cc/";
-                _paq.push(['setTrackerUrl', u+'piwik.php']);
-                _paq.push(['setSiteId', '4']);
-                var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-                g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
-            })();
-        </script>
-        <noscript><p><img src="//piwik.caldera.cc/piwik.php?idsite=4" style="border:0;" alt="" /></p></noscript>
-        <!-- End Piwik Code -->
-
     <script>
-        window.onload = function() {
-            $.ajax({
-                dataType: 'json',
-                url: 'https://criticalmass.in/api/hamburg/current',
-                success: function(rideData) {
-                    createCalendar(rideData);
-                    createMap(rideData);
-
-                    $('.hide-after-load').hide();
-                    $('.show-after-load').show();
-                },
-                error: function() {
-                }
-            });
-        };
-
-        function createCalendar(rideData) {
-            $('#tour-location').html(rideData.location);
-
-            var date = new Date(rideData.timestamp * 1000);
-
-            $('#tour-date').html(date.format('dd.mm.yyyy'));
-
-            $('#city-page').attr('href', 'https://criticalmass.in/hamburg');
-            $('#ride-page').attr('href', 'https://criticalmass.in/hamburg/' + date.format('yyyy-mm-dd'));
-        }
-
-        function createMap(rideData) {
-            var map = L.map('tour-map');
-            var center = L.latLng(rideData.latitude, rideData.longitude);
-
-            L.tileLayer('https://maps.wikimedia.org/osm-intl/{z}/{x}/{y}@2x.png', {
-                attribution: 'Wikimedia maps beta | Map data &copy; <a href="http://openstreetmap.org/copyright">OpenStreetMap contributors</a>'
-            }).addTo(map);
-
-            map.setView(center, 15);
-
-            L.marker(center).addTo(map);
-        }
+        CriticalMass.loadModule('Map', 'tour-map');
     </script>
     </body>
 </html>
