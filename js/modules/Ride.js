@@ -1,19 +1,19 @@
-define(['jquery', 'leaflet'], function ($) {
-    Map = function (context, options) {
+define(['jquery', 'leaflet', 'dateformat'], function ($) {
+    Ride = function (context, options) {
         this._mapSelector = context;
 
         this._fetchData();
     };
 
-    Map.prototype._mapSelector = null;
+    Ride.prototype._mapSelector = null;
 
-    Map.prototype._fetchData = function() {
+    Ride.prototype._fetchData = function() {
         $.ajax({
             dataType: 'json',
             context: this,
             url: 'https://criticalmass.in/api/hamburg/current',
             success: function(rideData) {
-                //createCalendar(rideData);
+                this._createCalendar(rideData);
                 this._createMap(rideData);
 
                 $('.hide-after-load').hide();
@@ -24,7 +24,7 @@ define(['jquery', 'leaflet'], function ($) {
         });
     };
 
-    Map.prototype._createMap = function(rideData) {
+    Ride.prototype._createMap = function(rideData) {
         var map = L.map(this._mapSelector);
 
         var center = L.latLng(rideData.latitude, rideData.longitude);
@@ -38,7 +38,7 @@ define(['jquery', 'leaflet'], function ($) {
         L.marker(center).addTo(map);
     };
 
-    function createCalendar(rideData) {
+    Ride.prototype._createCalendar = function(rideData) {
         $('#tour-location').html(rideData.location);
 
         var date = new Date(rideData.timestamp * 1000);
@@ -47,7 +47,7 @@ define(['jquery', 'leaflet'], function ($) {
 
         $('#city-page').attr('href', 'https://criticalmass.in/hamburg');
         $('#ride-page').attr('href', 'https://criticalmass.in/hamburg/' + date.format('yyyy-mm-dd'));
-    }
+    };
 
-    return Map;
+    return Ride;
 });

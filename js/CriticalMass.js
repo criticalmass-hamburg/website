@@ -13,10 +13,11 @@ CriticalMass.loadModule = function(name, context, options, callback) {
 require.config({
     paths:
     {
-        "Map": "js/modules/Map",
+        "Ride": "js/modules/Ride",
         "leaflet": "js/external/leaflet/leaflet",
         "jquery": "js/external/jquery/jquery-3.1.0.min",
-        "localforage": "js/external/localforage/localforage.min"
+        "localforage": "js/external/localforage/localforage.min",
+        "dateformat": "js/external/dateformat/dateformat"
     },
     shim: {
 
