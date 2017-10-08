@@ -21,6 +21,9 @@ require.config({
         "leaflet-extramarkers": "js/external/leaflet/ExtraMarkers"
     },
     shim: {
-
+        'leaflet-extramarkers': {
+            deps: ['leaflet'],
+            exports: 'L.ExtraMarkers'
+        }
     }
 });
