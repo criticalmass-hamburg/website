@@ -48,7 +48,7 @@ define(['jquery', 'leaflet', 'dateformat', 'leaflet-extramarkers'], function ($)
     Ride.prototype._createCalendar = function(rideData) {
         $('#tour-location').html(rideData.location);
 
-        var date = new Date(rideData.timestamp * 1000);
+        var date = new Date(rideData.dateTime * 1000);
 
         $('#tour-date').html(date.format('dd.mm.yyyy'));
 
