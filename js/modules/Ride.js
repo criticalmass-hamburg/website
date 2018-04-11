@@ -29,7 +29,7 @@ define(['jquery', 'leaflet', 'dateformat', 'leaflet-extramarkers'], function ($)
 
         var center = L.latLng(rideData.latitude, rideData.longitude);
 
-        L.tileLayer('https://maps.wikimedia.org/osm-intl/{z}/{x}/{y}@2x.png', {
+        L.tileLayer('https://tiles.caldera.cc/wikimedia-intl/{z}/{x}/{y}.png', {
             attribution: 'Wikimedia maps beta | Map data &copy; <a href="http://openstreetmap.org/copyright">OpenStreetMap contributors</a>'
         }).addTo(map);
 
