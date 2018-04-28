@@ -1,346 +1,218 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <title>Critical Mass Hamburg</title>
+{% extends 'base.html.twig' %}
 
-        <meta name="description" content="Die Critical Mass Hamburg ist jeden letzten Freitag im Monat mit einer Radtour in Hamburg unterwegs." />
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <meta http-equiv="x-ua-compatible" content="ie=edge">
+{% block content %}
+    <div class="row">
+        <div class="col-12">
+            <div id="criticalmass-carousel" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#criticalmass-carousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#criticalmass-carousel" data-slide-to="1"></li>
+                    <li data-target="#criticalmass-carousel" data-slide-to="2"></li>
+                </ol>
 
-        <link rel="stylesheet" href="/css/criticalmass.css" />
-        <link rel="stylesheet" href="/css/external/leaflet/leaflet.css" />
-        <link rel="stylesheet" href="/css/external/extramarkers/extramarkers.css" />
-        <link rel="stylesheet" href="/css/external/fontawesome/font-awesome.min.css" />
+                <div class="carousel-inner" role="listbox">
+                    <div class="carousel-item active">
+                        <img class="d-block img-fluid" src="/img/carousel/header1.jpg" alt="Radfahren im Sonnenuntergang" />
+                    </div>
+                    <div class="carousel-item">
+                        <img class="d-block img-fluid" src="/img/carousel/header2.jpg" alt="Bike-up vor dem Telemichel" />
+                    </div>
+                    <div class="carousel-item">
+                        <img class="d-block img-fluid" src="/img/carousel/header3.jpg" alt="Bike-up auf dem Fischmarkt" />
+                    </div>
+                </div>
 
-        <meta property="og:url" content="https://criticalmass.hamburg/" />
-        <meta property="og:type" content="website" />
-        <meta property="og:locale" content="de_DE" />
-        <meta property="og:title" content="Critical Mass Hamburg" />
-        <meta property="og:description" content="Die Critical Mass Hamburg ist jeden letzten Freitag im Monat mit einer Radtour in Hamburg unterwegs." />
-        <meta property="og:image" content="https://criticalmass.hamburg/img/opengraph/preview.jpg" />
+                <a class="carousel-control-prev" href="#criticalmass-carousel" role="button" data-slide="prev">
+                    <span class="icon-prev" aria-hidden="true"></span>
+                    <span class="sr-only">Voriges Bild</span>
+                </a>
 
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:site" content="@cm_hh" />
-        <meta name="twitter:title" content="Critical Mass Hamburg" />
-        <meta name="twitter:description" content="Die Critical Mass Hamburg ist jeden letzten Freitag im Monat mit einer Radtour in Hamburg unterwegs." />
-        <meta name="twitter:image" content="https://criticalmass.hamburg/img/opengraph/preview.jpg" />
-    </head>
-    <body>
-        <a href="https://github.com/criticalmass-hamburg/website">
-            <img style="position: absolute; top: 0; right: 0; border: 0;" src="/img/ribbon.png" alt="Fork me on GitHub" />
-        </a>
+                <a class="carousel-control-next" href="#criticalmass-carousel" role="button" data-slide="next">
+                    <span class="icon-next" aria-hidden="true"></span>
+                    <span class="sr-only">Nächstes Bild</span>
+                </a>
+            </div>
+        </div>
+    </div>
 
-        <div class="container">
-            <div class="row mt-3 mb-3">
+    <div class="row mt-3">
+        <div class="col-12">
+            <p class="lead">
+                Die Critical Mass Hamburg ist eine monatliche Radtour durch die Innenstadt der Hansestadt. Weltweit steigen am letzten Freitag im Monat in vielen Städten Menschen aufs Fahrrad und treffen sich zu einer gemeinsamen Radtour. Manche sehen darin einfach eine Stadtrundfahrt mit Freunden, andere wollen auf die Belange des Radverkehrs aufmerksam machen, wieder andere möchten einfach mal wieder Gleichgesinnte treffen, während für einen Moment Ruhe einkehrt auf den vielbefahrenen Hauptverkehrsstraßen.
+            </p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12 mt-3">
+            <div class="row">
                 <div class="col-12">
-                    <h1 class="text-md-center">
-                        Critical Mass Hamburg
-                    </h1>
+                    <h3 class="text-center">
+                        Teilnehmen?
+                    </h3>
                 </div>
             </div>
 
             <div class="row">
-                <div class="col-12">
-                    <div id="criticalmass-carousel" class="carousel slide" data-ride="carousel">
-                        <ol class="carousel-indicators">
-                            <li data-target="#criticalmass-carousel" data-slide-to="0" class="active"></li>
-                            <li data-target="#criticalmass-carousel" data-slide-to="1"></li>
-                            <li data-target="#criticalmass-carousel" data-slide-to="2"></li>
-                        </ol>
-
-                        <div class="carousel-inner" role="listbox">
-                            <div class="carousel-item active">
-                                <img class="d-block img-fluid" src="/img/carousel/header1.jpg" alt="Radfahren im Sonnenuntergang" />
-                            </div>
-                            <div class="carousel-item">
-                                <img class="d-block img-fluid" src="/img/carousel/header2.jpg" alt="Bike-up vor dem Telemichel" />
-                            </div>
-                            <div class="carousel-item">
-                                <img class="d-block img-fluid" src="/img/carousel/header3.jpg" alt="Bike-up auf dem Fischmarkt" />
-                            </div>
-                        </div>
-
-                        <a class="carousel-control-prev" href="#criticalmass-carousel" role="button" data-slide="prev">
-                            <span class="icon-prev" aria-hidden="true"></span>
-                            <span class="sr-only">Voriges Bild</span>
-                        </a>
-
-                        <a class="carousel-control-next" href="#criticalmass-carousel" role="button" data-slide="next">
-                            <span class="icon-next" aria-hidden="true"></span>
-                            <span class="sr-only">Nächstes Bild</span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row mt-3">
-                <div class="col-12">
-                    <p class="lead">
-                        Die Critical Mass Hamburg ist eine monatliche Radtour durch die Innenstadt der Hansestadt. Weltweit steigen am letzten Freitag im Monat in vielen Städten Menschen aufs Fahrrad und treffen sich zu einer gemeinsamen Radtour. Manche sehen darin einfach eine Stadtrundfahrt mit Freunden, andere wollen auf die Belange des Radverkehrs aufmerksam machen, wieder andere möchten einfach mal wieder Gleichgesinnte treffen, während für einen Moment Ruhe einkehrt auf den vielbefahrenen Hauptverkehrsstraßen.
-                    </p>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-12 mt-3">
-                    <div class="row">
-                        <div class="col-12">
-                            <h3 class="text-center">
-                                Teilnehmen?
-                            </h3>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-12 col-md-4">
-                            <p>
-                                Die Critical Mass Hamburg trifft sich immer am letzten Freitag im Monat gegen <strong>19 Uhr</strong>.
-                            </p>
-
-                            <p class="loading-spinner hide-after-load text-center">
-                                <i class="fa fa-spinner fa-pulse fa-1x fa-fw"></i>
-                                <span>Lade Tourdaten</span>
-                            </p>
-
-                            <p class="hidden show-after-load">
-                                Die nächste Tour ist am <strong id="tour-date"></strong>.
-                            </p>
-
-                            <p class="hidden show-after-load">
-                                Der Treffpunkt ist dieses Mal: <strong id="tour-location"></strong>
-                            </p>
-
-                            <div class="hidden show-after-load text-center">
-                                <div class="btn-group">
-                                    <a id="city-page" href="" class="btn btn-primary">
-                                        <i class="fa fa-bicycle"></i>
-                                        Mehr erfahren
-                                    </a>
-
-                                    <a id="ride-page" href="" class="btn btn-primary">
-                                        <i class="fa fa-map-pin"></i>
-                                        Tourseite
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-12 col-md-8 mt-3 mt-md-0" style="height: 200px;">
-                            <p class="loading-spinner hide-after-load text-center mt-3">
-                                <i class="fa fa-spinner fa-pulse fa-1x fa-fw"></i>
-                                <span>Lade Kartendaten</span>
-                            </p>
-
-                            <div class="hidden show-after-load" id="tour-map" style="height: 100%;">
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-12 col-md-6 col-lg-4 mt-3">
-                    <h3 class="text-center">
-                        Folgen?
-                    </h3>
-
+                <div class="col-12 col-md-4">
                     <p>
-                        Die Critical Mass Hamburg ist natürlich auf facebook und twitter aktiv. Folge ihr für weitere Informationen und aktuelle Neuigkeiten.
+                        Die Critical Mass Hamburg trifft sich immer am letzten Freitag im Monat gegen <strong>19 Uhr</strong>.
                     </p>
 
-                    <div class="text-center mt-2">
+                    <p class="loading-spinner hide-after-load text-center">
+                        <i class="fa fa-spinner fa-pulse fa-1x fa-fw"></i>
+                        <span>Lade Tourdaten</span>
+                    </p>
+
+                    <p class="hidden show-after-load">
+                        Die nächste Tour ist am <strong id="tour-date"></strong>.
+                    </p>
+
+                    <p class="hidden show-after-load">
+                        Der Treffpunkt ist dieses Mal: <strong id="tour-location"></strong>
+                    </p>
+
+                    <div class="hidden show-after-load text-center">
                         <div class="btn-group">
-                            <a href="https://facebook.com/cmhamburg" class="btn btn-primary">
-                                <i class="fa fa-facebook" aria-hidden="true"></i>
-                                facebook
+                            <a id="city-page" href="" class="btn btn-primary">
+                                <i class="fa fa-bicycle"></i>
+                                Mehr erfahren
                             </a>
-                            <a href="https://twitter.com/cm_hh" class="btn btn-primary">
-                                <i class="fa fa-twitter" aria-hidden="true"></i>
-                                twitter
+
+                            <a id="ride-page" href="" class="btn btn-primary">
+                                <i class="fa fa-map-pin"></i>
+                                Tourseite
                             </a>
                         </div>
                     </div>
                 </div>
 
-                <div class="col-12 col-md-6 col-lg-4 mt-3">
-                    <h3 class="text-center">
-                        Mitgestalten?
-                    </h3>
-
-                    <p>
-                        Beteilige in der Diskussionsgruppe auf facebook, diskutiere auf twitter, bringe deine eigenen Ideen ein!
+                <div class="col-12 col-md-8 mt-3 mt-md-0" style="height: 200px;">
+                    <p class="loading-spinner hide-after-load text-center mt-3">
+                        <i class="fa fa-spinner fa-pulse fa-1x fa-fw"></i>
+                        <span>Lade Kartendaten</span>
                     </p>
 
-                    <div class="text-center mt-2">
-                        <div class="btn-group">
-                            <a href="https://www.facebook.com/groups/CMHH.Diskussion/" class="btn btn-primary">
-                                <i class="fa fa-facebook" aria-hidden="true"></i>
-                                Diskussionsgruppe
-                            </a>
-                            <a href="https://twitter.com/hashtag/cmhh,cm_hh" class="btn btn-primary">
-                                <i class="fa fa-twitter" aria-hidden="true"></i>
-                                #cmhh
-                            </a>
-                        </div>
+                    <div class="hidden show-after-load" id="tour-map" style="height: 100%;">
+
                     </div>
-                </div>
-
-                <div class="col-12 col-md-6 col-lg-4 mt-3">
-                    <h3 class="text-center">
-                        Anschauen?
-                    </h3>
-
-                    <p>
-                        Noch nicht überzeugt? Nach ein paar Videos und Fotos der Critical Mass Hamburg hast du einen besseren Eindruck.
-                    </p>
-
-                    <div class="text-center mt-2">
-                        <div class="btn-group">
-                            <a href="https://www.youtube.com/results?search_query=Critical+Mass+Hamburg" class="btn btn-primary">
-                                <i class="fa fa-youtube" aria-hidden="true"></i>
-                                Videos
-                            </a>
-
-                            <a href="https://www.flickr.com/search/?text=Critical%20Mass%20Hamburg" class="btn btn-primary">
-                                <i class="fa fa-flickr" aria-hidden="true"></i>
-                                Fotos
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-12 col-md-6 col-lg-4 mt-3">
-                    <h3 class="text-center">
-                        Hinterherfahren?
-                    </h3>
-
-                    <p>
-                        Zu spät? Den Treffpunkt nicht gefunden? Mit deinem Smartphone kannst du den Weg zur Masse finden.
-                    </p>
-
-                    <div class="text-center mt-2">
-                        <div class="btn-group">
-                            <a href="http://criticalmaps.net/" class="btn btn-primary">
-                                Critical Maps
-                            </a>
-
-                            <a href="https://itunes.apple.com/de/app/critical-mass-berlin/id918669647" class="btn btn-primary">
-                                <i class="fa fa-apple" aria-hidden="true"></i>
-                            </a>
-
-                            <a href="https://play.google.com/store/apps/details?id=de.stephanlindauer.criticalmaps" class="btn btn-primary">
-                                <i class="fa fa-android" aria-hidden="true"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-12 col-md-6 col-lg-4 mt-3">
-                    <h3 class="text-center">
-                        Umbauen?
-                    </h3>
-
-                    <p>
-                        Du kannst diese Seite auf GitHub editieren. Ändere Informationen oder Rechtschreibfehler und erstelle einen Pull Request.
-                    </p>
-
-                    <div class="text-center mt-2">
-                        <div class="btn-group">
-                            <a href="https://github.com/criticalmass-hamburg/website" class="btn btn-primary">
-                                <i class="fa fa-github" aria-hidden="true"></i>
-                                GitHub
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row mt-3">
-                <div class="col-12">
-                    <p class="text-center">
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#impressModal">
-                            Impressum
-                        </button>
-                    </p>
-                </div>
-            </div>
-
-            <div class="row mt-1 mb-1">
-                <div class="col-12 text-center">
-                    <small>
-                        Anzeige
-                    </small>
-                    <br />
-                    <ins data-revive-zoneid="13" data-revive-id="41009926173ca0d1c900a7dc0a6dd401"></ins>
-                    <script async src="//adserver.caldera.cc/delivery/asyncjs.php"></script>
                 </div>
             </div>
         </div>
 
-        <div class="modal fade" id="impressModal" tabindex="-1" role="dialog" aria-labelledby="impressModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title">
-                            Impressum
-                        </h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <p>
-                            Angaben nach § 5 TMG:
-                        </p>
+        <div class="col-12 col-md-6 col-lg-4 mt-3">
+            <h3 class="text-center">
+                Folgen?
+            </h3>
 
-                        <p>
-                            Malte Hübner
-                            <br />
-                            Mühlenaustieg 10
-                            <br />
-                            22523 Hamburg
-                        </p>
+            <p>
+                Die Critical Mass Hamburg ist natürlich auf facebook und twitter aktiv. Folge ihr für weitere Informationen und aktuelle Neuigkeiten.
+            </p>
 
-                        <p>
-                            E-Mail: malte@caldera.cc
-                            <br />
-                            Telefon: 0700 11 864 833
-                        </p>
-                    </div>
-
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-primary" data-dismiss="modal">Schließen</button>
-                    </div>
+            <div class="text-center mt-2">
+                <div class="btn-group">
+                    <a href="https://facebook.com/cmhamburg" class="btn btn-primary">
+                        <i class="fa fa-facebook" aria-hidden="true"></i>
+                        facebook
+                    </a>
+                    <a href="https://twitter.com/cm_hh" class="btn btn-primary">
+                        <i class="fa fa-twitter" aria-hidden="true"></i>
+                        twitter
+                    </a>
                 </div>
             </div>
         </div>
-        <script src="/js/external/jquery/jquery-3.1.0.min.js"></script>
-        <script src="/js/external/popper/popper.min.js"></script>
-        <script src="/js/external/bootstrap/bootstrap.min.js"></script>
 
+        <div class="col-12 col-md-6 col-lg-4 mt-3">
+            <h3 class="text-center">
+                Mitgestalten?
+            </h3>
 
-        <script src="/js/external/requirejs/require.js"></script>
-        <script src="/js/CriticalMass.js"></script>
+            <p>
+                Beteilige in der Diskussionsgruppe auf facebook, diskutiere auf twitter, bringe deine eigenen Ideen ein!
+            </p>
 
-        <script>
-        CriticalMass.loadModule('Ride', 'tour-map');
-        </script>
-        <!-- Piwik -->
-        <script type="text/javascript">
-            var _paq = _paq || [];
-            /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
-            _paq.push(["setCookieDomain", "*.criticalmass.hamburg"]);
-            _paq.push(['trackPageView']);
-            _paq.push(['enableLinkTracking']);
-            (function() {
-                var u="//piwik.caldera.cc/";
-                _paq.push(['setTrackerUrl', u+'piwik.php']);
-                _paq.push(['setSiteId', '4']);
-                var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-                g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
-            })();
-        </script>
-        <noscript><p><img src="//piwik.caldera.cc/piwik.php?idsite=4&rec=1" style="border:0;" alt="" /></p></noscript>
-        <!-- End Piwik Code -->
-    </body>
-</html>
+            <div class="text-center mt-2">
+                <div class="btn-group">
+                    <a href="https://www.facebook.com/groups/CMHH.Diskussion/" class="btn btn-primary">
+                        <i class="fa fa-facebook" aria-hidden="true"></i>
+                        Diskussionsgruppe
+                    </a>
+                    <a href="https://twitter.com/hashtag/cmhh,cm_hh" class="btn btn-primary">
+                        <i class="fa fa-twitter" aria-hidden="true"></i>
+                        #cmhh
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-4 mt-3">
+            <h3 class="text-center">
+                Anschauen?
+            </h3>
+
+            <p>
+                Noch nicht überzeugt? Nach ein paar Videos und Fotos der Critical Mass Hamburg hast du einen besseren Eindruck.
+            </p>
+
+            <div class="text-center mt-2">
+                <div class="btn-group">
+                    <a href="https://www.youtube.com/results?search_query=Critical+Mass+Hamburg" class="btn btn-primary">
+                        <i class="fa fa-youtube" aria-hidden="true"></i>
+                        Videos
+                    </a>
+
+                    <a href="https://www.flickr.com/search/?text=Critical%20Mass%20Hamburg" class="btn btn-primary">
+                        <i class="fa fa-flickr" aria-hidden="true"></i>
+                        Fotos
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-4 mt-3">
+            <h3 class="text-center">
+                Hinterherfahren?
+            </h3>
+
+            <p>
+                Zu spät? Den Treffpunkt nicht gefunden? Mit deinem Smartphone kannst du den Weg zur Masse finden.
+            </p>
+
+            <div class="text-center mt-2">
+                <div class="btn-group">
+                    <a href="http://criticalmaps.net/" class="btn btn-primary">
+                        Critical Maps
+                    </a>
+
+                    <a href="https://itunes.apple.com/de/app/critical-mass-berlin/id918669647" class="btn btn-primary">
+                        <i class="fa fa-apple" aria-hidden="true"></i>
+                    </a>
+
+                    <a href="https://play.google.com/store/apps/details?id=de.stephanlindauer.criticalmaps" class="btn btn-primary">
+                        <i class="fa fa-android" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-4 mt-3">
+            <h3 class="text-center">
+                Umbauen?
+            </h3>
+
+            <p>
+                Du kannst diese Seite auf GitHub editieren. Ändere Informationen oder Rechtschreibfehler und erstelle einen Pull Request.
+            </p>
+
+            <div class="text-center mt-2">
+                <div class="btn-group">
+                    <a href="https://github.com/criticalmass-hamburg/website" class="btn btn-primary">
+                        <i class="fa fa-github" aria-hidden="true"></i>
+                        GitHub
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
