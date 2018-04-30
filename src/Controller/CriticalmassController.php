@@ -20,4 +20,12 @@ class CriticalmassController extends Controller
             'ride' => $ride,
         ]);
     }
+
+    /**
+     * @Route("/privacy")
+     */
+    public function privacy(): Response
+    {
+        return $this->render('privacy.html.twig');
+    }
 }
