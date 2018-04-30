@@ -2,32 +2,20 @@ define(['jquery', 'leaflet', 'dateformat', 'leaflet-extramarkers'], function ($)
     Ride = function (context, options) {
         this._mapSelector = context;
 
-        this._fetchData();
+        this._createMap();
     };
 
     Ride.prototype._mapSelector = null;
 
-    Ride.prototype._fetchData = function() {
-        $.ajax({
-            dataType: 'json',
-            context: this,
-            url: 'https://criticalmass.in/api/hamburg/current',
-            success: function(rideData) {
-                this._createCalendar(rideData);
-                this._createMap(rideData);
-
-                $('.hide-after-load').hide();
-                $('.show-after-load').show();
-            },
-            error: function() {
-            }
-        });
-    };
-
     Ride.prototype._createMap = function(rideData) {
         var map = L.map(this._mapSelector);
 
-        var center = L.latLng(rideData.latitude, rideData.longitude);
+        var $map = $('#' + this._mapSelector);
+
+        var latitude = $map.data('latitude');
+        var longitude = $map.data('longitude');
+
+        var center = L.latLng(latitude, longitude);
 
         L.tileLayer('https://tiles.caldera.cc/wikimedia-intl/{z}/{x}/{y}.png', {
             attribution: 'Wikimedia maps beta | Map data &copy; <a href="http://openstreetmap.org/copyright">OpenStreetMap contributors</a>'
@@ -43,17 +31,6 @@ define(['jquery', 'leaflet', 'dateformat', 'leaflet-extramarkers'], function ($)
         });
 
         L.marker(center, {icon: markerIcon}).addTo(map);
-    };
-
-    Ride.prototype._createCalendar = function(rideData) {
-        $('#tour-location').html(rideData.location);
-
-        var date = new Date(rideData.dateTime * 1000);
-
-        $('#tour-date').html(date.format('dd.mm.yyyy'));
-
-        $('#city-page').attr('href', 'https://criticalmass.in/hamburg');
-        $('#ride-page').attr('href', 'https://criticalmass.in/hamburg/' + date.format('yyyy-mm-dd'));
     };
 
     return Ride;
