@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Critical Mass Hamburg</title>
+
+    <meta name="description" content="Die Critical Mass Hamburg ist jeden letzten Freitag im Monat mit einer Radtour in Hamburg unterwegs." />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <link rel="stylesheet" href="/css/criticalmass.css" />
+    <link rel="stylesheet" href="/css/external/leaflet/leaflet.css" />
+    <link rel="stylesheet" href="/css/external/extramarkers/extramarkers.css" />
+    <link rel="stylesheet" href="/css/external/fontawesome/font-awesome.min.css" />
+
+    <meta property="og:url" content="https://criticalmass.hamburg/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="de_DE" />
+    <meta property="og:title" content="Critical Mass Hamburg" />
+    <meta property="og:description" content="Die Critical Mass Hamburg ist jeden letzten Freitag im Monat mit einer Radtour in Hamburg unterwegs." />
+    <meta property="og:image" content="https://criticalmass.hamburg/img/opengraph/preview.jpg" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@cm_hh" />
+    <meta name="twitter:title" content="Critical Mass Hamburg" />
+    <meta name="twitter:description" content="Die Critical Mass Hamburg ist jeden letzten Freitag im Monat mit einer Radtour in Hamburg unterwegs." />
+    <meta name="twitter:image" content="https://criticalmass.hamburg/img/opengraph/preview.jpg" />
+</head>
+<body>
+<a href="https://github.com/criticalmass-hamburg/website">
+    <img style="position: absolute; top: 0; right: 0; border: 0;" src="/img/ribbon.png" alt="Fork me on GitHub" />
+</a>
+
+<div class="container">
+    <div class="row mt-3 mb-3">
+        <div class="col-12">
+            <h1 class="text-md-center">
+                Critical Mass Hamburg
+            </h1>
+        </div>
+    </div>
+
+    {% block content %}
+    {% endblock %}
+
+    <div class="row mt-3">
+        <div class="col-12">
+            <p class="text-center">
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#impressModal">
+                    Impressum
+                </button>
+            </p>
+        </div>
+    </div>
+
+    <div class="row mt-1 mb-1">
+        <div class="col-12 text-center">
+            <small>
+                Anzeige
+            </small>
+            <br />
+            <ins data-revive-zoneid="13" data-revive-id="41009926173ca0d1c900a7dc0a6dd401"></ins>
+            <script async src="//adserver.caldera.cc/delivery/asyncjs.php"></script>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="impressModal" tabindex="-1" role="dialog" aria-labelledby="impressModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">
+                    Impressum
+                </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>
+                    Angaben nach § 5 TMG:
+                </p>
+
+                <p>
+                    Malte Hübner
+                    <br />
+                    Mühlenaustieg 10
+                    <br />
+                    22523 Hamburg
+                </p>
+
+                <p>
+                    E-Mail: malte@caldera.cc
+                    <br />
+                    Telefon: 0700 11 864 833
+                </p>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Schließen</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="/js/external/jquery/jquery-3.1.0.min.js"></script>
+<script src="/js/external/popper/popper.min.js"></script>
+<script src="/js/external/bootstrap/bootstrap.min.js"></script>
+
+<script src="/js/external/requirejs/require.js"></script>
+<script src="/js/CriticalMass.js"></script>
+
+<script>
+    CriticalMass.loadModule('Ride', 'tour-map');
+</script>
+
+<!-- Piwik -->
+<script type="text/javascript">
+    var _paq = _paq || [];
+    /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+    _paq.push(["setCookieDomain", "*.criticalmass.hamburg"]);
+    _paq.push(['trackPageView']);
+    _paq.push(['enableLinkTracking']);
+    (function() {
+        var u="//piwik.caldera.cc/";
+        _paq.push(['setTrackerUrl', u+'piwik.php']);
+        _paq.push(['setSiteId', '4']);
+        var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+        g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+    })();
+</script>
+<noscript><p><img src="//piwik.caldera.cc/piwik.php?idsite=4&rec=1" style="border:0;" alt="" /></p></noscript>
+<!-- End Piwik Code -->
+</body>
+</html>
