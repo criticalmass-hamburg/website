@@ -10,7 +10,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class CriticalmassController extends Controller
 {
     /**
-     * @Route("/")
+     * @Route("/", name="frontpage")
      */
     public function index(RideFetcher $rideFetcher): Response
     {
@@ -22,7 +22,7 @@ class CriticalmassController extends Controller
     }
 
     /**
-     * @Route("/privacy")
+     * @Route("/privacy", name="privacy")
      */
     public function privacy(): Response
     {

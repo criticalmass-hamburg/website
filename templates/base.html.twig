@@ -44,12 +44,15 @@
     {% endblock %}
 
     <div class="row mt-3">
-        <div class="col-12">
-            <p class="text-center">
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#impressModal">
+        <div class="col-12 text-center">
+            <div class="btn-group">
+                <button type="button" class="btn btn-link" data-toggle="modal" data-target="#impressModal">
                     Impressum
                 </button>
-            </p>
+                <a href="{{ path('privacy') }}" class="btn btn-link">
+                    Datenschutz
+                </a>
+            </div>
         </div>
     </div>
 
