@@ -17,6 +17,16 @@ class Ride
      */
     protected $location;
 
+    /**
+     * @JMS\Type("float")
+     */
+    protected $latitude;
+
+    /**
+     * @JMS\Type("float")
+     */
+    protected $longitude;
+
     public function __construct()
     {
     }
@@ -29,5 +39,15 @@ class Ride
     public function getLocation(): ?string
     {
         return $this->location;
+    }
+
+    public function getLatitude(): ?float
+    {
+        return $this->latitude;
+    }
+
+    public function getLongitude(): ?float
+    {
+        return $this->longitude;
     }
 }
