@@ -2,3 +2,7 @@ $criticalmass-primary: rgb(24, 154, 202);
 $headings-color: $criticalmass-primary;
 
 @import "bootstrap4/bootstrap.scss";
+
+small.advertising-rotate {
+  transform: rotate(-90deg);
+}
