@@ -5822,3 +5822,6 @@ a.text-dark:hover {
 
 .invisible {
   visibility: hidden !important; }
+
+small.advertising-rotate {
+  transform: rotate(-90deg); }
