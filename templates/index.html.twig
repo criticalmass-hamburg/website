@@ -44,6 +44,7 @@
     </div>
 
     <div class="row">
+        {% if ride and ride.dateTime and ride.location %}
         <div class="col-12 mt-3">
             <div class="row">
                 <div class="col-12">
@@ -53,7 +54,6 @@
                 </div>
             </div>
 
-            {% if ride %}
             <div class="row">
                 <div class="col-12 col-md-4">
                     <p>
@@ -68,7 +68,7 @@
                         Der Treffpunkt ist dieses Mal: <strong>{{ ride.location }}</strong>
                     </p>
 
-                    <div class="">
+                    <div class="text-center">
                         <div class="btn-group">
                             <a href="https://criticalmass.in/hamburg" class="btn btn-primary">
                                 <i class="fa fa-bicycle"></i>
@@ -81,6 +81,14 @@
                             </a>
                         </div>
                     </div>
+
+                    <p class="text-center">
+                        <small>
+                            (Hoppla, die Angaben stimmten nicht?
+                            <br />
+                            Du kannst sie <a href="https://criticalmass.in/hamburg/{{ ride.dateTime|date('Y-m-d') }}">selbst korrigieren</a>.)
+                        </small>
+                    </p>
                 </div>
 
                 <div class="col-12 col-md-8 mt-3 mt-md-0" style="height: 200px;">
@@ -89,8 +97,22 @@
                     </div>
                 </div>
             </div>
-            {% endif %}
         </div>
+        {% else %}
+            <div class="col-12 col-md-6 col-lg-4 mt-3">
+                <h3 class="text-center">
+                    Teilnehmen?
+                </h3>
+
+                <p>
+                    Die Critical Mass Hamburg trifft sich immer am letzten Freitag im Monat gegen <strong>19 Uhr</strong>.
+                </p>
+
+                <p>
+                    Weitere Details sind momentan leider nicht bekannt — wenn du den Treffpunkt der nächsten Tour kennst, füge ihn bitte drüben bei <a href="https://criticalmass.in/hamburg">criticalmass.in/hamburg</a> hinzu, er wird dann automatisch hierher übertragen.
+                </p>
+            </div>
+        {% endif %}
 
         <div class="col-12 col-md-6 col-lg-4 mt-3">
             <h3 class="text-center">
