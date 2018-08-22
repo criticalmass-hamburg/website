@@ -56,17 +56,7 @@
 
                 <div class="row">
                     <div class="col-12 col-md-4">
-                        <p>
-                            Die Critical Mass Hamburg trifft sich immer am letzten Freitag im Monat gegen <strong>{{ ride.dateTime|date('H.i', 'Europe/Berlin') }} Uhr</strong>.
-                        </p>
-
-                        <p>
-                            Die nächste Tour ist am <strong>{{ ride.dateTime|date('d.m.Y') }}</strong>.
-                        </p>
-
-                        <p>
-                            Der Treffpunkt ist dieses Mal: <strong>{{ ride.location }}</strong>
-                        </p>
+                        {{ 'block.participate.text'|trans({'%standard_time%': ride.dateTime|date('H.i', 'Europe/Berlin'), '%next_tour_date%': ride.dateTime|date('d.m.Y'), '%next_location%': ride.location})|raw }}
 
                         <div class="text-center">
                             <div class="btn-group">
