@@ -1,0 +1,36 @@
+carousel:
+    caption:
+        header1: Radfahren im Sonnenuntergang
+        header2: Bike-up vor dem Telemichel
+        header3: Bike-up auf dem Fischmarkt
+    navigation:
+        prev: Voriges Bild
+        next: Nächstes Bild
+
+intro: Die Critical Mass Hamburg ist eine monatliche Radtour durch die Innenstadt der Hansestadt. Weltweit steigen am letzten Freitag im Monat in vielen Städten Menschen aufs Fahrrad und treffen sich zu einer gemeinsamen Radtour. Manche sehen darin einfach eine Stadtrundfahrt mit Freunden, andere wollen auf die Belange des Radverkehrs aufmerksam machen, wieder andere möchten einfach mal wieder Gleichgesinnte treffen, während für einen Moment Ruhe einkehrt auf den vielbefahrenen Hauptverkehrsstraßen.
+
+block:
+    participate:
+        title: Teilnehmen?
+        text: '<p>Die Critical Mass Hamburg trifft sich immer am letzten Freitag im Monat gegen <strong>%standard_time% Uhr</strong>.</p><p>Die nächste Tour ist am <strong>%next_tour_date%</strong>.</p><p>Der Treffpunkt ist dieses Mal: <strong>%next_location%</strong></p>'
+        update: (Hoppla, die Angaben stimmten nicht?<br />Du kannst sie selbst korrigieren.)
+
+    join:
+        title: Folgen?
+        text: Die Critical Mass Hamburg ist natürlich auf facebook und twitter aktiv. Folge ihr für weitere Informationen und aktuelle Neuigkeiten.
+
+    help:
+        title: Mitgestalten?
+        text: Beteilige in der Diskussionsgruppe auf facebook, diskutiere auf twitter, bringe deine eigenen Ideen ein!
+
+    take_a_look:
+        title: Anschauen?
+        text: Noch nicht überzeugt? Nach ein paar Videos und Fotos der Critical Mass Hamburg hast du einen besseren Eindruck.
+
+    follow:
+        title: Hinterherfahren?
+        text: Zu spät? Den Treffpunkt nicht gefunden? Mit deinem Smartphone kannst du den Weg zur Masse finden.
+
+    reconstruction:
+        title: Umbauen?
+        text: Du kannst diese Seite auf GitHub editieren. Ändere Informationen oder Rechtschreibfehler und erstelle einen Pull Request.
