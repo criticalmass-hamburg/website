@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace App\Ride;
+namespace App\Model;
 
 use JMS\Serializer\Annotation as JMS;
 
