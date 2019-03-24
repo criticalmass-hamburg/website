@@ -2,6 +2,7 @@
 
 namespace App\Ride;
 
+use App\Model\Ride;
 use Curl\Curl;
 use JMS\Serializer\SerializerInterface;
 
@@ -23,9 +24,20 @@ class RideFetcher
         $this->serializer = $serializer;
     }
 
-    public function fetch(): ?Ride
+    public function fetch(bool $regular = false): ?Ride
     {
-        $this->curl->get(self::API_URL);
+        $queryVars = [];
+
+        if ($regular) {
+            $queryVars = [
+                'cycleMandatory' => true,
+                'slugsAllowd' => false,
+            ];
+        }
+
+        $apiUrl = sprintf('%s?%s', self::API_URL, http_build_query($queryVars));
+
+        $this->curl->get($apiUrl);
 
         if (200 === $this->curl->httpStatusCode) {
             $apiResponse = $this->curl->rawResponse;

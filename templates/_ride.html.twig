@@ -1,0 +1,69 @@
+{% if ride and ride.dateTime and ride.location %}
+    <div class="col-12 mt-3">
+        <div class="row">
+            <div class="col-12">
+                <h3 class="text-center">
+                    Teilnehmen?
+                </h3>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12 col-md-4">
+                <p>
+                    Die Critical Mass Hamburg trifft sich immer am letzten Freitag im Monat gegen <strong>{{ ride.dateTime|date('H.i', 'Europe/Berlin') }} Uhr</strong>.
+                </p>
+
+                <p>
+                    Die nächste Tour ist am <strong>{{ ride.dateTime|date('d.m.Y') }}</strong>.
+                </p>
+
+                <p>
+                    Der Treffpunkt ist dieses Mal: <strong>{{ ride.location }}</strong>
+                </p>
+
+                <div class="text-center">
+                    <div class="btn-group">
+                        <a href="https://criticalmass.in/hamburg" class="btn btn-primary">
+                            <i class="fa fa-bicycle"></i>
+                            Mehr erfahren
+                        </a>
+
+                        <a href="https://criticalmass.in/hamburg/{{ ride.dateTime|date('Y-m-d') }}" class="btn btn-primary">
+                            <i class="fa fa-map-pin"></i>
+                            Tourseite
+                        </a>
+                    </div>
+                </div>
+
+                <p class="text-center">
+                    <small>
+                        (Hoppla, die Angaben stimmten nicht?
+                        <br />
+                        Du kannst sie <a href="https://criticalmass.in/hamburg/{{ ride.dateTime|date('Y-m-d') }}">selbst korrigieren</a>.)
+                    </small>
+                </p>
+            </div>
+
+            <div class="col-12 col-md-8 mt-3 mt-md-0" style="height: 200px;">
+                <div class="hidden show-after-load" id="tour-map" style="height: 100%;" data-latitude="{{ ride.latitude }}" data-longitude="{{ ride.longitude }}">
+
+                </div>
+            </div>
+        </div>
+    </div>
+{% else %}
+    <div class="col-12 col-md-6 col-lg-4 mt-3">
+        <h3 class="text-center">
+            Teilnehmen?
+        </h3>
+
+        <p>
+            Die Critical Mass Hamburg trifft sich immer am letzten Freitag im Monat gegen <strong>19 Uhr</strong>.
+        </p>
+
+        <p>
+            Weitere Details sind momentan leider nicht bekannt — wenn du den Treffpunkt der nächsten Tour kennst, füge ihn bitte drüben bei <a href="https://criticalmass.in/hamburg">criticalmass.in/hamburg</a> hinzu, er wird dann automatisch hierher übertragen.
+        </p>
+    </div>
+{% endif %}
