@@ -1,4 +1,4 @@
-define(['jquery', 'leaflet', 'leaflet-extramarkers'], function ($) {
+define(['jquery', 'leaflet', 'leaflet.extra-markers'], function ($) {
     Ride = function (context, options) {
         this._mapSelector = context;
 

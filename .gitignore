@@ -23,3 +23,9 @@ yarn-error.log
 ###< symfony/web-server-bundle ###
 
 .idea
+node_modules
+public/css
+public/img
+public/fonts
+public/js
+assets/css
