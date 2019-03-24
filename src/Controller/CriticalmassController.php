@@ -3,21 +3,19 @@
 namespace App\Controller;
 
 use App\Ride\RideFetcher;
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-class CriticalmassController extends Controller
+class CriticalmassController extends AbstractController
 {
     /**
      * @Route("/", name="frontpage")
      */
     public function index(RideFetcher $rideFetcher): Response
     {
-        $ride = $rideFetcher->fetch();
-
         return $this->render('index.html.twig', [
-            'ride' => $ride,
+            'ride' => $rideFetcher->fetch(true),
         ]);
     }
 

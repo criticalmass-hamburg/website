@@ -7,6 +7,11 @@ use JMS\Serializer\Annotation as JMS;
 class Ride
 {
     /**
+     * @JMS\Type("int")
+     */
+    protected $id;
+
+    /**
      * @JMS\Type("DateTime<'U'>")
      * @JMS\SerializedName("dateTime")
      */
@@ -29,6 +34,11 @@ class Ride
 
     public function __construct()
     {
+    }
+
+    public function getId(): int
+    {
+        return $this->id;
     }
 
     public function getDateTime(): ?\DateTime
