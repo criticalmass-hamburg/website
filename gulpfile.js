@@ -92,12 +92,49 @@ function compressCss() {
         .pipe(gulp.dest('public/css/'));
 }
 
-//gulp.task('compress-css', ['leaflet-css', 'extramarkers-css', 'sass'], function () {
-
-//});
-
 const buildCss = gulp.series(sassCss, compressCss);
 
-const build = gulp.series(buildLeaflet, buildExtramarkers, copyAssetImages, buildCss, buildFontawesome);
+/* Javascript */
+
+function copyJsModules() {
+    return gulp
+        .src([
+            'assets/js/**/**/**/*.js',
+        ])
+        .pipe(flatten())
+        .pipe(gulp.dest('public/js/'));
+}
+
+function copyJsExternal() {
+    return gulp
+        .src([
+            'node_modules/bootstrap/dist/js/bootstrap.js',
+            'node_modules/bootstrap/dist/js/bootstrap.min.js',
+            'node_modules/jquery/dist/jquery.js',
+            'node_modules/jquery/dist/jquery.min.js',
+            'node_modules/leaflet/dist/leaflet.js',
+            'node_modules/requirejs/require.js',
+        ])
+        .pipe(gulp.dest('public/js/'));
+}
+
+function compressJs() {
+    return gulp
+        .src([
+            'public/js/*.js',
+        ])
+        .pipe(minify({
+            ext: {
+                min: '.min.js'
+            },
+            noSource: true,
+            ignoreFiles: ['*.min.js']
+        }))
+        .pipe(gulp.dest('public/js/'));
+}
+
+const buildJs = gulp.series(copyJsModules, copyJsExternal, compressJs);
+
+const build = gulp.series(buildLeaflet, buildExtramarkers, copyAssetImages, buildCss, buildFontawesome, buildJs);
 
 exports.default = build;
