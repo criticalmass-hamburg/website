@@ -22,3 +22,7 @@ small.advertising-rotate {
   right: 0;
   border: 0;
 }
+
+.leaflet-layer {
+  filter: sepia(25%) hue-rotate(50deg) saturate(150%) contrast(75%) brightness(110%);
+}
