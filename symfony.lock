@@ -44,9 +44,6 @@
             "ref": "70062abc2cd58794d2a90274502f81b55cd9951b"
         }
     },
-    "egulias/email-validator": {
-        "version": "2.1.4"
-    },
     "fig/link-util": {
         "version": "1.0.0"
     },
@@ -115,9 +112,6 @@
             "version": "4.0",
             "ref": "aaddfdf43cdecd4cf91f992052d76c2cadc04543"
         }
-    },
-    "swiftmailer/swiftmailer": {
-        "version": "v6.0.2"
     },
     "symfony/apache-pack": {
         "version": "1.0",
@@ -233,6 +227,9 @@
             "ref": "fadbfe33303a76e25cb63401050439aa9b1a9c7f"
         }
     },
+    "symfony/mime": {
+        "version": "v4.3.6"
+    },
     "symfony/monolog-bridge": {
         "version": "v4.0.8"
     },
@@ -325,15 +322,6 @@
     },
     "symfony/stopwatch": {
         "version": "v4.0.8"
-    },
-    "symfony/swiftmailer-bundle": {
-        "version": "2.5",
-        "recipe": {
-            "repo": "github.com/symfony/recipes",
-            "branch": "master",
-            "version": "2.5",
-            "ref": "3db029c03e452b4a23f7fc45cec7c922c2247eb8"
-        }
     },
     "symfony/translation": {
         "version": "3.3",
