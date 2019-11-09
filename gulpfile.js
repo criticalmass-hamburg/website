@@ -9,6 +9,16 @@ const flatten = require('gulp-flatten');
 const sass = require('gulp-sass');
 sass.compiler = require('node-sass');
 
+/* Font Awesome */
+
+function copyFontawesomeFonts() {
+    return gulp
+        .src('node_modules/font-awesome/fonts/*')
+        .pipe(gulp.dest('public/fonts'));
+}
+
+const buildFontawesome = gulp.series(copyFontawesomeFonts);
+
 /* Assets */
 
 function copyAssetImages() {
@@ -44,7 +54,6 @@ function compressCss() {
 
 const buildCss = gulp.series(sassCss, compressCss);
 
-
-const build = gulp.series(copyAssetImages, buildCss);
+const build = gulp.series(copyAssetImages, buildCss, buildFontawesome);
 
 exports.default = build;
