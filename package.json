@@ -10,7 +10,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
-    "gulp": "^3.9.1",
+    "gulp": "^4.0.2",
     "gulp-clean-css": "^2.0.4",
     "gulp-concat": "^2.6.1",
     "gulp-css-replace-url": "^0.2.4",
@@ -26,7 +26,7 @@
     "cookie-notice": "^1.1.17",
     "dateformat": "^3.0.3",
     "font-awesome": "^4.7.0",
-    "jquery": "^3.3.1",
+    "jquery": "^3.4.1",
     "leaflet": "^0.7.7",
     "leaflet-extra-markers": "^1.0.6",
     "requirejs": "^2.3.6"
