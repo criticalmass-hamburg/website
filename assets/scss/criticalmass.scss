@@ -23,6 +23,15 @@ small.advertising-rotate {
   border: 0;
 }
 
+#global-climate-strike {
+  box-shadow: 0 0 5px $warning;
+  border-radius: 25px;
+
+  a {
+    text-decoration: underline;
+  }
+}
+
 .leaflet-layer {
   filter: sepia(25%) hue-rotate(50deg) saturate(150%) contrast(75%) brightness(110%);
 }
