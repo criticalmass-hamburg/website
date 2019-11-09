@@ -9,6 +9,32 @@ const flatten = require('gulp-flatten');
 const sass = require('gulp-sass');
 sass.compiler = require('node-sass');
 
+
+/* Leaflet-Extramarkers */
+
+function extramarkersImages() {
+    return gulp
+        .src('node_modules/leaflet-extra-markers/dist/img/*')
+        .pipe(gulp.dest('public/img/leaflet-extra-markers'));
+}
+
+function extramarkersCss() {
+    return gulp
+        .src('node_modules/leaflet-extra-markers/dist/css/leaflet.extra-markers.min.css')
+        .pipe(urlAdjuster({
+            replace: ['../img/','/img/leaflet-extra-markers/'],
+        }))
+        .pipe(gulp.dest('assets/css'));
+}
+
+function extramarkersJs() {
+    return gulp
+        .src('node_modules/leaflet-extra-markers/dist/js/leaflet.extra-markers.js')
+        .pipe(gulp.dest('public/js/'));
+}
+
+const buildExtramarkers = gulp.series(extramarkersImages, extramarkersCss, extramarkersJs);
+
 /* Font Awesome */
 
 function copyFontawesomeFonts() {
@@ -54,6 +80,6 @@ function compressCss() {
 
 const buildCss = gulp.series(sassCss, compressCss);
 
-const build = gulp.series(copyAssetImages, buildCss, buildFontawesome);
+const build = gulp.series(buildExtramarkers, copyAssetImages, buildCss, buildFontawesome);
 
 exports.default = build;
