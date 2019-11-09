@@ -15,3 +15,10 @@ $link-color: $white;
 small.advertising-rotate {
   transform: rotate(-90deg);
 }
+
+#github-ribbon {
+  position: absolute;
+  top: 0;
+  right: 0;
+  border: 0;
+}
