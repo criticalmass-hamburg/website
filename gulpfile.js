@@ -9,6 +9,24 @@ const flatten = require('gulp-flatten');
 const sass = require('gulp-sass');
 sass.compiler = require('node-sass');
 
+/* Leaflet */
+
+function leafletImages() {
+    return gulp
+        .src('node_modules/leaflet/dist/images/*')
+        .pipe(gulp.dest('public/img/leaflet'));
+}
+
+function leafletCss() {
+    return gulp
+        .src('node_modules/leaflet/dist/leaflet.css')
+        .pipe(urlAdjuster({
+            replace: ['images/','/img/leaflet/'],
+        }))
+        .pipe(gulp.dest('assets/css'));
+}
+
+const buildLeaflet = gulp.series(leafletImages, leafletCss);
 
 /* Leaflet-Extramarkers */
 
@@ -80,6 +98,6 @@ function compressCss() {
 
 const buildCss = gulp.series(sassCss, compressCss);
 
-const build = gulp.series(buildExtramarkers, copyAssetImages, buildCss, buildFontawesome);
+const build = gulp.series(buildLeaflet, buildExtramarkers, copyAssetImages, buildCss, buildFontawesome);
 
 exports.default = build;
