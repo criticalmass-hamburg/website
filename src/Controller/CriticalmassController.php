@@ -26,4 +26,12 @@ class CriticalmassController extends AbstractController
     {
         return $this->render('privacy.html.twig');
     }
+
+    /**
+     * @Route("/impress", name="impress")
+     */
+    public function impress(): Response
+    {
+        return $this->render('impress.html.twig');
+    }
 }

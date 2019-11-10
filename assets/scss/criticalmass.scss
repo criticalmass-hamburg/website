@@ -1,6 +1,7 @@
 $climateGreen: rgb(27, 115, 64);
 $criticalmassBlue: rgb(24, 154, 202);
 $white: rgb(255, 255, 255);
+$black: rgb(0, 0, 0);
 
 $primary: $white;
 $headings-color: $white;
@@ -21,7 +22,6 @@ $link-color: $white;
 @import "node_modules/bootstrap/scss/buttons.scss";
 @import "node_modules/bootstrap/scss/button-group.scss";
 @import "node_modules/bootstrap/scss/close.scss";
-@import "node_modules/bootstrap/scss/modal.scss";
 @import "node_modules/bootstrap/scss/carousel.scss";
 @import "node_modules/bootstrap/scss/utilities.scss";
 
