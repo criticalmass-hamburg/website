@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-    <link rel="stylesheet" href="/css/criticalmass.min.css" />
+    <link rel="stylesheet" href="{{ asset('/css/criticalmass.min.css') }}" />
 
     <meta property="og:url" content="https://criticalmass.hamburg/" />
     <meta property="og:type" content="website" />
@@ -68,11 +68,11 @@
     </div>
 </div>
 
-<script src="/js/jquery.js"></script>
-<script src="/js/bootstrap.js"></script>
+<script src="{{ asset('/js/jquery.js') }}"></script>
+<script src="{{ asset('/js/bootstrap.js') }}"></script>
 
-<script src="/js/require.js"></script>
-<script src="/js/CriticalMass.js"></script>
+<script src="{{ asset('/js/require.js') }}"></script>
+<script src="{{ asset('/js/CriticalMass.js') }}"></script>
 
 <script>
     CriticalMass.loadModule('Ride', 'tour-map');
