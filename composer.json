@@ -12,8 +12,7 @@
         "symfony/console": "^4.0",
         "symfony/flex": "^1.2",
         "symfony/framework-bundle": "^4.0",
-        "symfony/twig-bundle": "^4.0",
-        "symfony/yaml": "^4.0"
+        "symfony/twig-bundle": "^4.0"
     },
     "require-dev": {
         "symfony/browser-kit": "^4.0",
