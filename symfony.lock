@@ -86,9 +86,6 @@
     "psr/log": {
         "version": "1.0.2"
     },
-    "psr/simple-cache": {
-        "version": "1.0.1"
-    },
     "sensio/framework-extra-bundle": {
         "version": "4.0",
         "recipe": {
@@ -159,9 +156,6 @@
         "version": "v4.0.8"
     },
     "symfony/event-dispatcher": {
-        "version": "v4.0.8"
-    },
-    "symfony/expression-language": {
         "version": "v4.0.8"
     },
     "symfony/filesystem": {
