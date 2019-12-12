@@ -1,4 +1,3 @@
-$climateGreen: rgb(27, 115, 64);
 $criticalmassBlue: rgb(24, 154, 202);
 $white: rgb(255, 255, 255);
 $black: rgb(0, 0, 0);
@@ -6,10 +5,8 @@ $black: rgb(0, 0, 0);
 $primary: $white;
 $headings-color: $white;
 
-$body-bg: $climateGreen;
 $body-color: $white;
 $link-color: $white;
-
 
 @import "node_modules/bootstrap/scss/functions.scss";
 @import "node_modules/bootstrap/scss/variables.scss";
@@ -36,17 +33,4 @@ small.advertising-rotate {
   top: 0;
   right: 0;
   border: 0;
-}
-
-#global-climate-strike {
-  box-shadow: 0 0 5px $warning;
-  border-radius: 25px;
-
-  a {
-    text-decoration: underline;
-  }
-}
-
-.leaflet-layer {
-  filter: sepia(25%) hue-rotate(50deg) saturate(150%) contrast(75%) brightness(110%);
 }
