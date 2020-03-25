@@ -1,4 +1,4 @@
-{% if ride and ride.dateTime and ride.location %}
+{% if ride and ride.dateTime and ride.location and ride.disabledReason is null %}
     <div class="col-12 mt-3">
         <div class="row">
             <div class="col-12">
@@ -45,6 +45,7 @@
                 </p>
             </div>
 
+
             <div class="col-12 col-md-8 mt-3 mt-md-0" style="height: 200px;">
                 <div class="hidden show-after-load" id="tour-map" style="height: 100%;" data-latitude="{{ ride.latitude }}" data-longitude="{{ ride.longitude }}">
 
@@ -52,7 +53,7 @@
             </div>
         </div>
     </div>
-{% else %}
+{% elseif ride.disabledReason is null %}
     <div class="col-12 col-md-6 col-lg-4 mt-3">
         <h3 class="text-center">
             Teilnehmen?
@@ -65,5 +66,27 @@
         <p>
             Weitere Details sind momentan leider nicht bekannt — wenn du den Treffpunkt der nächsten Tour kennst, füge ihn bitte drüben bei <a href="https://criticalmass.in/hamburg">criticalmass.in/hamburg</a> hinzu, er wird dann automatisch hierher übertragen.
         </p>
+    </div>
+{% else %}
+    <div class="col-12 mt-3">
+        <div class="row">
+            <div class="col-12">
+                <h3 class="text-center text-danger">
+                    {% if ride.disabledReason == 'CANCELLED_AUTHORITIES' %}
+                    Die Tour am {{ ride.dateTime|date('d.m.Y') }} wurde aufgrund einer behördlichen Anordnung abgesagt
+                    {% else %}
+                    Die Tour am {{ ride.dateTime|date('d.m.Y') }} wurde abgesagt
+                    {% endif %}
+                </h3>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12">
+                <div class="alert alert-danger">
+                    {{ ride.disabledReasonMessage|nl2br }}
+                </div>
+            </div>
+        </div>
     </div>
 {% endif %}

@@ -32,6 +32,18 @@ class Ride
      */
     protected $longitude;
 
+    /**
+     * @JMS\Type("string")
+     * @JMS\SerializedName("disabledReason")
+     */
+    protected $disabledReason;
+
+    /**
+     * @JMS\Type("string")
+     * @JMS\SerializedName("disabledReasonMessage")
+     */
+    protected $disabledReasonMessage;
+
     public function __construct()
     {
     }
@@ -59,5 +71,15 @@ class Ride
     public function getLongitude(): ?float
     {
         return $this->longitude;
+    }
+
+    public function getDisabledReason(): ?string
+    {
+        return $this->disabledReason;
+    }
+
+    public function getDisabledReasonMessage(): ?string
+    {
+        return $this->disabledReasonMessage;
     }
 }
