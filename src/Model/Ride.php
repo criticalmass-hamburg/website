@@ -20,23 +20,23 @@ class Ride
     /**
      * @JMS\Type("string")
      */
-    protected string $location;
+    protected ?string $location;
 
     /**
      * @JMS\Type("float")
      */
-    protected float $latitude;
+    protected ?float $latitude;
 
     /**
      * @JMS\Type("float")
      */
-    protected float $longitude;
+    protected ?float $longitude;
 
     /**
      * @JMS\Type("string")
      * @JMS\SerializedName("disabledReason")
      */
-    protected string $disabledReason;
+    protected ?string $disabledReason;
 
     /**
      * @JMS\Type("boolean")
@@ -47,7 +47,7 @@ class Ride
      * @JMS\Type("string")
      * @JMS\SerializedName("disabledReasonMessage")
      */
-    protected string $disabledReasonMessage;
+    protected ?string $disabledReasonMessage;
 
     public function __construct()
     {
