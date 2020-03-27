@@ -11,11 +11,9 @@ class RideFetcher
     const API_URL = 'https://criticalmass.in/api/hamburg/current';
     const API_FORMAT = 'json';
 
-    /** @var Curl $curl */
-    protected $curl;
+    protected Curl $curl;
 
-    /** @var SerializerInterface $serializer */
-    protected $serializer;
+    protected SerializerInterface $serializer;
 
     public function __construct(SerializerInterface $serializer)
     {
