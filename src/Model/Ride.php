@@ -9,45 +9,45 @@ class Ride
     /**
      * @JMS\Type("int")
      */
-    protected $id;
+    protected int $id;
 
     /**
      * @JMS\Type("DateTime<'U'>")
      * @JMS\SerializedName("dateTime")
      */
-    protected $dateTime;
+    protected \DateTime $dateTime;
 
     /**
      * @JMS\Type("string")
      */
-    protected $location;
+    protected string $location;
 
     /**
      * @JMS\Type("float")
      */
-    protected $latitude;
+    protected float $latitude;
 
     /**
      * @JMS\Type("float")
      */
-    protected $longitude;
+    protected float $longitude;
 
     /**
      * @JMS\Type("string")
      * @JMS\SerializedName("disabledReason")
      */
-    protected $disabledReason;
+    protected string $disabledReason;
 
     /**
      * @JMS\Type("boolean")
      */
-    protected $enabled;
+    protected bool $enabled;
 
     /**
      * @JMS\Type("string")
      * @JMS\SerializedName("disabledReasonMessage")
      */
-    protected $disabledReasonMessage;
+    protected string $disabledReasonMessage;
 
     public function __construct()
     {
