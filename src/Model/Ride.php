@@ -39,6 +39,11 @@ class Ride
     protected $disabledReason;
 
     /**
+     * @JMS\Type("boolean")
+     */
+    protected $enabled;
+
+    /**
      * @JMS\Type("string")
      * @JMS\SerializedName("disabledReasonMessage")
      */
@@ -71,6 +76,11 @@ class Ride
     public function getLongitude(): ?float
     {
         return $this->longitude;
+    }
+
+    public function isEnabled(): bool
+    {
+        return $this->enabled;
     }
 
     public function getDisabledReason(): ?string
