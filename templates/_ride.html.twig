@@ -1,4 +1,4 @@
-{% if ride and ride.dateTime and ride.location and ride.disabledReason is null %}
+{% if ride and ride.dateTime and ride.location and ride.enabled %}
     <div class="col-12 mt-3">
         <div class="row">
             <div class="col-12">
@@ -53,7 +53,7 @@
             </div>
         </div>
     </div>
-{% elseif ride.disabledReason is null %}
+{% elseif ride.enabled %}
     <div class="col-12 col-md-6 col-lg-4 mt-3">
         <h3 class="text-center">
             Teilnehmen?
