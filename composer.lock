@@ -1855,6 +1855,7 @@
         },
         {
             "name": "symfony/mime",
+
             "version": "v5.0.5",
             "source": {
                 "type": "git",

@@ -1,9 +1,8 @@
-FROM phpdockerio/php73-fpm:latest
+FROM phpdockerio/php74-fpm:latest
 WORKDIR "/application"
 
 # Fix debconf warnings upon build
 ARG DEBIAN_FRONTEND=noninteractive
-
 
 # Install git
 RUN apt-get update \
