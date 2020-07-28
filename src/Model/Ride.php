@@ -13,7 +13,6 @@ class Ride
 
     /**
      * @JMS\Type("DateTime<'U'>")
-     * @JMS\SerializedName("dateTime")
      */
     protected \DateTime $dateTime;
 
@@ -45,7 +44,6 @@ class Ride
 
     /**
      * @JMS\Type("string")
-     * @JMS\SerializedName("disabledReasonMessage")
      */
     protected ?string $disabledReasonMessage;
 
