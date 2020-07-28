@@ -29,7 +29,7 @@ class RideFetcher
         if ($regular) {
             $queryVars = [
                 'cycleMandatory' => true,
-                'slugsAllowd' => false,
+                'slugsAllowed' => false,
             ];
         }
 
