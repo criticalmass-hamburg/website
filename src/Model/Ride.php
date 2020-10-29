@@ -35,7 +35,7 @@ class Ride
      * @JMS\Type("string")
      * @JMS\SerializedName("disabledReason")
      */
-    protected ?string $disabledReason;
+    protected ?string $disabledReason = null;
 
     /**
      * @JMS\Type("boolean")
