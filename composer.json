@@ -2,6 +2,7 @@
     "type": "project",
     "license": "proprietary",
     "require": {
+        "php": "^8.5",
         "ext-iconv": "*",
         "jms/serializer-bundle": "^3.7",
         "php-curl-class/php-curl-class": "^8.0",
@@ -21,13 +22,17 @@
         "symfony/dotenv": "^5.0",
         "symfony/maker-bundle": "^1.0",
         "symfony/phpunit-bridge": "^5.0",
-        "symfony/profiler-pack": "*"
+        "symfony/stopwatch": "^5.0",
+        "symfony/web-profiler-bundle": "^5.0"
     },
     "config": {
         "preferred-install": {
             "*": "dist"
         },
-        "sort-packages": true
+        "sort-packages": true,
+        "allow-plugins": {
+            "symfony/flex": true
+        }
     },
     "autoload": {
         "psr-4": {
