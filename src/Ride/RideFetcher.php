@@ -3,23 +3,18 @@
 namespace App\Ride;
 
 use App\Model\Ride;
-use Curl\Curl;
 use JMS\Serializer\SerializerInterface;
+use Symfony\Contracts\HttpClient\HttpClientInterface;
 
 class RideFetcher
 {
     const API_URL = 'https://criticalmass.in/api/hamburg/current';
     const API_FORMAT = 'json';
 
-    protected Curl $curl;
-
-    protected SerializerInterface $serializer;
-
-    public function __construct(SerializerInterface $serializer)
-    {
-        $this->curl = new Curl();
-
-        $this->serializer = $serializer;
+    public function __construct(
+        protected HttpClientInterface $httpClient,
+        protected SerializerInterface $serializer
+    ) {
     }
 
     public function fetch(bool $regular = false): ?Ride
@@ -33,12 +28,12 @@ class RideFetcher
             ];
         }
 
-        $apiUrl = sprintf('%s?%s', self::API_URL, http_build_query($queryVars));
+        $response = $this->httpClient->request('GET', self::API_URL, [
+            'query' => $queryVars,
+        ]);
 
-        $this->curl->get($apiUrl);
-
-        if (200 === $this->curl->httpStatusCode) {
-            $apiResponse = $this->curl->rawResponse;
+        if (200 === $response->getStatusCode()) {
+            $apiResponse = $response->getContent();
 
             /** @var Ride $ride */
             $ride = $this->serializer->deserialize($apiResponse, Ride::class, self::API_FORMAT);
