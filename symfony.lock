@@ -52,9 +52,6 @@
     "php": {
         "version": "7.4"
     },
-    "php-curl-class/php-curl-class": {
-        "version": "8.0.3"
-    },
     "psr/cache": {
         "version": "1.0.1"
     },
