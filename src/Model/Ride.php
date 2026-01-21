@@ -2,7 +2,7 @@
 
 namespace App\Model;
 
-use Symfony\Component\Serializer\Annotation\SerializedName;
+use Symfony\Component\Serializer\Attribute\SerializedName;
 
 class Ride
 {
