@@ -3,7 +3,8 @@
 namespace App\Ride;
 
 use App\Model\Ride;
-use JMS\Serializer\SerializerInterface;
+use Symfony\Component\Serializer\Normalizer\DateTimeNormalizer;
+use Symfony\Component\Serializer\SerializerInterface;
 use Symfony\Contracts\HttpClient\HttpClientInterface;
 
 class RideFetcher
@@ -36,7 +37,13 @@ class RideFetcher
             $apiResponse = $response->getContent();
 
             /** @var Ride $ride */
-            $ride = $this->serializer->deserialize($apiResponse, Ride::class, self::API_FORMAT);
+            $ride = $this->serializer->deserialize(
+                $apiResponse,
+                Ride::class,
+                self::API_FORMAT,
+                [
+                    DateTimeNormalizer::FORMAT_KEY => 'U',
+                ]);
 
             return $ride;
         }

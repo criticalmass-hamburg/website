@@ -2,50 +2,27 @@
 
 namespace App\Model;
 
-use JMS\Serializer\Annotation as JMS;
+use Symfony\Component\Serializer\Annotation\SerializedName;
 
 class Ride
 {
-    /**
-     * @JMS\Type("int")
-     */
-    protected int $id;
+    public ?int $id = null;
 
-    /**
-     * @JMS\Type("DateTime<'U'>")
-     */
-    protected \DateTime $dateTime;
+    #[SerializedName('date_time')]
+    public ?\DateTime $dateTime = null;
 
-    /**
-     * @JMS\Type("string")
-     */
-    protected ?string $location;
+    public ?string $location = null;
 
-    /**
-     * @JMS\Type("float")
-     */
-    protected ?float $latitude;
+    public ?float $latitude = null;
 
-    /**
-     * @JMS\Type("float")
-     */
-    protected ?float $longitude;
+    public ?float $longitude = null;
 
-    /**
-     * @JMS\Type("string")
-     * @JMS\SerializedName("disabledReason")
-     */
-    protected ?string $disabledReason = null;
+    #[SerializedName('disabledReason')]
+    public ?string $disabledReason = null;
 
-    /**
-     * @JMS\Type("boolean")
-     */
-    protected bool $enabled;
+    public bool $enabled = false;
 
-    /**
-     * @JMS\Type("string")
-     */
-    protected ?string $disabledReasonMessage;
+    public ?string $disabledReasonMessage = null;
 
     public function __construct()
     {
