@@ -1,0 +1,26 @@
+$criticalmass-blue: rgb(24, 154, 202);
+
+// Bootstrap
+@import "~bootstrap/scss/bootstrap";
+
+// Font Awesome
+$fa-font-path: "~@fortawesome/fontawesome-free/webfonts";
+@import "~@fortawesome/fontawesome-free/scss/fontawesome";
+@import "~@fortawesome/fontawesome-free/scss/solid";
+@import "~@fortawesome/fontawesome-free/scss/brands";
+
+// Leaflet
+@import "~leaflet/dist/leaflet.css";
+@import "~leaflet-extra-markers/dist/css/leaflet.extra-markers.min.css";
+
+// Custom styles
+small.advertising-rotate {
+    transform: rotate(-90deg);
+}
+
+#github-ribbon {
+    position: absolute;
+    top: 0;
+    right: 0;
+    border: 0;
+}

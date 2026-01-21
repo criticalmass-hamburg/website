@@ -1,34 +1,27 @@
 {
-  "name": "criticalmass-hamburg",
-  "version": "0.1.0",
-  "description": "",
-  "main": "index.js",
-  "directories": {
-    "test": "tests"
-  },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "devDependencies": {
-    "gulp": "^4.0.2",
-    "gulp-clean-css": "^2.0.4",
-    "gulp-concat": "^2.6.1",
-    "gulp-css-replace-url": "^0.2.4",
-    "gulp-flatten": "^0.4.0",
-    "gulp-minify": "^3.1.0",
-    "gulp-sass": "^4.0.2",
-    "node-sass": "^4.13.1"
-  },
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "bootstrap": "^4.3.0",
-    "cookie-notice": "^1.1.17",
-    "dateformat": "^3.0.3",
-    "font-awesome": "^4.7.0",
-    "jquery": "^3.5.0",
-    "leaflet": "^0.7.7",
-    "leaflet-extra-markers": "^1.0.6",
-    "requirejs": "^2.3.6"
-  }
+    "name": "criticalmass-hamburg",
+    "version": "1.0.0",
+    "description": "Critical Mass Hamburg Website",
+    "private": true,
+    "scripts": {
+        "dev": "encore dev",
+        "watch": "encore dev --watch",
+        "build": "encore production"
+    },
+    "devDependencies": {
+        "@hotwired/stimulus": "^3.2.2",
+        "@symfony/webpack-encore": "^5.0.1",
+        "core-js": "^3.47.0",
+        "file-loader": "^6.2.0",
+        "sass": "^1.83.0",
+        "sass-loader": "^16.0.4",
+        "webpack-notifier": "^1.15.0"
+    },
+    "dependencies": {
+        "@fortawesome/fontawesome-free": "^6.7.2",
+        "bootstrap": "^5.3.3",
+        "jquery": "^3.7.1",
+        "leaflet": "^1.9.4",
+        "leaflet-extra-markers": "^1.2.2"
+    }
 }

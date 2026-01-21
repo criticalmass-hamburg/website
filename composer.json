@@ -15,6 +15,7 @@
         "symfony/runtime": "^8.0",
         "symfony/serializer": "^8.0",
         "symfony/twig-bundle": "^8.0",
+        "symfony/webpack-encore-bundle": "*",
         "symfony/yaml": "^8.0"
     },
     "require-dev": {

@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-    <link rel="stylesheet" href="{{ asset('/css/criticalmass.min.css') }}" />
+    {{ encore_entry_link_tags('app') }}
 
     <meta property="og:url" content="https://criticalmass.hamburg/" />
     <meta property="og:type" content="website" />
@@ -25,7 +25,7 @@
 </head>
 <body>
 <a href="https://github.com/criticalmass-hamburg/website" class="d-none d-md-inline">
-    <img id="github-ribbon" src="/img/github/tr-red.png" alt="Fork me on GitHub" />
+    <img id="github-ribbon" src="{{ asset('build/images/github/tr-red.png') }}" alt="Fork me on GitHub" />
 </a>
 
 <div class="container">
@@ -68,14 +68,8 @@
     </div>
 </div>
 
-<script src="{{ asset('/js/jquery.js') }}"></script>
-<script src="{{ asset('/js/bootstrap.js') }}"></script>
+{{ encore_entry_script_tags('app') }}
 
-<script src="{{ asset('/js/require.js') }}"></script>
-<script src="{{ asset('/js/CriticalMass.js') }}"></script>
-
-<script>
-    CriticalMass.loadModule('Ride', 'tour-map');
-</script>
+{% block javascripts %}{% endblock %}
 </body>
 </html>
