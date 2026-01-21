@@ -44,31 +44,6 @@
     {# Next Ride Section #}
     {% include '_ride.html.twig' %}
 
-    {# About Section #}
-    <section class="section">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6 mb-4 mb-lg-0">
-                    <h2 class="section-title">Was ist die Critical Mass?</h2>
-                    <p class="lead">
-                        Die Critical Mass ist eine weltweite Bewegung, bei der sich Radfahrende am letzten Freitag im Monat treffen, um gemeinsam durch die Stadt zu fahren.
-                    </p>
-                    <p>
-                        Manche sehen darin eine Stadtrundfahrt mit Freundinnen und Freunden, andere möchten auf die Belange des Radverkehrs aufmerksam machen, wieder andere möchten einfach mal Gleichgesinnte treffen, während für einen Moment Ruhe einkehrt auf den vielbefahrenen Hauptverkehrsstraßen.
-                    </p>
-                    <a href="https://criticalmass.in/hamburg" class="btn btn-primary">
-                        <i class="fa-solid fa-info-circle me-2"></i>
-                        Mehr erfahren
-                    </a>
-                </div>
-                <div class="col-lg-6">
-                    <div class="map-section" id="tour-map" data-latitude="53.5511" data-longitude="9.9937" style="height: 350px;">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
     {# Features Section #}
     <section class="section bg-light">
         <div class="container">
@@ -89,11 +64,14 @@
                             <a href="https://facebook.com/cmhamburg" class="btn btn-primary" title="Facebook">
                                 <i class="fa-brands fa-facebook-f"></i>
                             </a>
-                            <a href="https://twitter.com/cm_hh" class="btn btn-info" title="Twitter">
-                                <i class="fa-brands fa-twitter"></i>
-                            </a>
                             <a href="https://instagram.com/criticalmasshamburg/" class="btn btn-danger" title="Instagram">
                                 <i class="fa-brands fa-instagram"></i>
+                            </a>
+                            <a href="https://www.threads.com/@criticalmasshamburg" class="btn btn-dark" title="Threads">
+                                <i class="fa-brands fa-threads"></i>
+                            </a>
+                            <a href="https://norden.social/@CriticalMassHamburg" class="btn btn-info" title="Mastodon">
+                                <i class="fa-brands fa-mastodon"></i>
                             </a>
                         </div>
                     </div>
@@ -197,12 +175,6 @@
         var rideMapElement = document.getElementById('ride-map');
         if (rideMapElement && rideMapElement.dataset.latitude && rideMapElement.dataset.longitude) {
             CriticalMass.initMap('ride-map');
-        }
-
-        // Initialize about section map
-        var tourMapElement = document.getElementById('tour-map');
-        if (tourMapElement && tourMapElement.dataset.latitude && tourMapElement.dataset.longitude) {
-            CriticalMass.initMap('tour-map');
         }
     });
 </script>
