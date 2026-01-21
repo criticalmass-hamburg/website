@@ -1,12 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
-    <title>Critical Mass Hamburg</title>
+    <title>{% block title %}Critical Mass Hamburg{% endblock %}</title>
 
     <meta name="description" content="Die Critical Mass Hamburg ist jeden letzten Freitag im Monat mit einer Radtour in Hamburg unterwegs." />
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
     {{ encore_entry_link_tags('app') }}
 
@@ -24,52 +23,72 @@
     <meta name="twitter:image" content="https://criticalmass.hamburg/img/opengraph/preview.jpg" />
 </head>
 <body>
-<a href="https://github.com/criticalmass-hamburg/website" class="d-none d-md-inline">
-    <img id="github-ribbon" src="{{ asset('build/images/github/tr-red.png') }}" alt="Fork me on GitHub" />
-</a>
-
-<div class="container">
-    <div class="row mb-3">
-        <div class="col-12 col-lg-7 mt-3 order-lg-2 text-center">
-            <small class="d-inline-block d-lg-none">
-                Anzeige
-            </small>
-            <br class="d-lg-none" />
-            <small class="advertising-rotate d-none d-lg-inline-block">
-                Anzeige
-            </small>
-            <ins data-revive-zoneid="13" data-revive-id="41009926173ca0d1c900a7dc0a6dd401"></ins>
-            <script async src="//adserver.caldera.cc/delivery/asyncjs.php"></script>
-        </div>
-
-        <div class="col-12 col-lg-5 mt-3 order-lg-1 text-center">
-            <h1>
-                <a href="{{ path('frontpage') }}">
-                    Critical Mass Hamburg
-                </a>
-            </h1>
-        </div>
-    </div>
-
-    {% block content %}
+    {% block body %}
+        {% block content %}{% endblock %}
     {% endblock %}
 
-    <div class="row mt-3">
-        <div class="col-12 text-center">
-            <div class="btn-group">
-                <a href="{{ path('impress') }}" class="btn btn-link">
-                    Impressum
-                </a>
-                <a href="{{ path('privacy') }}" class="btn btn-link">
-                    Datenschutz
-                </a>
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4 mb-lg-0">
+                    <div class="footer-brand mb-3">
+                        <i class="fa-solid fa-bicycle"></i> Critical Mass Hamburg
+                    </div>
+                    <p>
+                        Jeden letzten Freitag im Monat treffen wir uns zur gemeinsamen Radtour durch Hamburg.
+                    </p>
+                    <div class="social-buttons">
+                        <a href="https://facebook.com/cmhamburg" class="btn btn-primary" title="Facebook">
+                            <i class="fa-brands fa-facebook-f"></i>
+                        </a>
+                        <a href="https://twitter.com/cm_hh" class="btn btn-primary" title="Twitter">
+                            <i class="fa-brands fa-twitter"></i>
+                        </a>
+                        <a href="https://instagram.com/criticalmasshamburg/" class="btn btn-primary" title="Instagram">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                        <a href="https://github.com/criticalmass-hamburg/website" class="btn btn-secondary" title="GitHub">
+                            <i class="fa-brands fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-6 col-lg-2 offset-lg-2 mb-4 mb-lg-0">
+                    <h5>Links</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="https://criticalmass.in/hamburg">criticalmass.in</a></li>
+                        <li class="mb-2"><a href="http://criticalmaps.net/">Critical Maps</a></li>
+                        <li class="mb-2"><a href="https://www.facebook.com/groups/CMHH.Diskussion/">Diskussion</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-6 col-lg-2 mb-4 mb-lg-0">
+                    <h5>Region</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="https://criticalmass.in/kiel">Kiel</a></li>
+                        <li class="mb-2"><a href="https://criticalmass.in/luebeck">Lübeck</a></li>
+                        <li class="mb-2"><a href="https://criticalmass.in/lueneburg">Lüneburg</a></li>
+                        <li class="mb-2"><a href="https://criticalmass.in/norderstedt">Norderstedt</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-6 col-lg-2">
+                    <h5>Rechtliches</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="{{ path('impress') }}">Impressum</a></li>
+                        <li class="mb-2"><a href="{{ path('privacy') }}">Datenschutz</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom text-center">
+                <small>&copy; {{ 'now'|date('Y') }} Critical Mass Hamburg</small>
             </div>
         </div>
-    </div>
-</div>
+    </footer>
 
-{{ encore_entry_script_tags('app') }}
+    {{ encore_entry_script_tags('app') }}
 
-{% block javascripts %}{% endblock %}
+    {% block javascripts %}{% endblock %}
 </body>
 </html>
