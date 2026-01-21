@@ -2,7 +2,6 @@
     "type": "project",
     "license": "proprietary",
     "require": {
-        "php": "^7.4",
         "ext-iconv": "*",
         "jms/serializer-bundle": "^3.7",
         "php-curl-class/php-curl-class": "^8.0",
